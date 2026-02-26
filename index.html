@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ALign CRM Pro</title>
 
-    <link rel="apple-touch-icon" href="https://img.icons8.com/fluency/512/crm.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="https://img.icons8.com/fluency/192/crm.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="logo.png">
     
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -56,11 +56,20 @@
         }
         h2 { margin-bottom: 10px; }
         p.subtitle { margin-top: 0; color: #7f8c8d; font-size: 1rem; }
+        /* Petit effet sympa pour que ton logo ressemble à une icône d'app sur la page */
+        .app-icon {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 25px; 
+            margin-bottom: 10px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 <body>
     <div id="content">
-        <img src="https://img.icons8.com/fluency/512/crm.png" width="140" alt="Logo CRM Professionnel" style="margin-bottom: 10px;">
+        <img src="logo.png" alt="Logo CRM" class="app-icon">
         <h2>ALign CRM Pro</h2>
         <p class="subtitle">Votre environnement de gestion client</p>
         
@@ -74,11 +83,9 @@
     </div>
 
     <script>
-        // Détection : L'application est-elle ouverte depuis l'écran d'accueil ?
         const isStandalone = window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches;
 
         if (isStandalone) {
-            // L'utilisateur a cliqué sur son icône personnelle ! On redirige de suite.
             document.getElementById('content').style.display = 'none';
             document.body.innerHTML = '<h3>⏳ Ouverture de ALign CRM Pro...</h3>';
             
