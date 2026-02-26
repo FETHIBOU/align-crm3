@@ -3,27 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALign EMEA Pro</title>
+    <title>ALign CRM</title>
 
-    <!-- 📱 L'ICÔNE PARFAITE POUR APPLE / IOS -->
-    <link rel="apple-touch-icon" sizes="192x192" href="[https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Air_Liquide_logo.svg/512px-Air_Liquide_logo.svg.png](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Air_Liquide_logo.svg/512px-Air_Liquide_logo.svg.png)">
-    <link rel="icon" type="image/png" href="[https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Air_Liquide_logo.svg/512px-Air_Liquide_logo.svg.png](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Air_Liquide_logo.svg/512px-Air_Liquide_logo.svg.png)">
-
-    <!-- Apparence native sur iOS (titre sous l'icône) -->
+    <link rel="apple-touch-icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Air_Liquide_logo.svg/512px-Air_Liquide_logo.svg.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Air_Liquide_logo.svg/512px-Air_Liquide_logo.svg.png">
+    
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="ALign CRM">
-
-    <!-- 🔄 REDIRECTION INSTANTANÉE VERS VOTRE APP GOOGLE -->
-    <meta http-equiv="refresh" content="0; url=[https://script.google.com/a/macros/airliquide.com/s/AKfycbwbbOVeONtKb440An7vHUXgCOmxu5qci7faCgf5wZmANxZKkP2aWJbwYPyTP4iH-hA/exec](https://script.google.com/a/macros/airliquide.com/s/AKfycbwbbOVeONtKb440An7vHUXgCOmxu5qci7faCgf5wZmANxZKkP2aWJbwYPyTP4iH-hA/exec)" />
+    <meta name="mobile-web-app-capable" content="yes">
 
     <style>
-        body { background-color: #e0e5ec; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: sans-serif; color: #002d72; }
+        body { 
+            background-color: #e0e5ec; 
+            display: flex; 
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+            font-family: sans-serif; 
+            color: #002d72; 
+            text-align: center;
+            padding: 20px;
+        }
+        .btn {
+            background-color: #002d72;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .instructions {
+            font-size: 0.9rem;
+            color: #333;
+            margin-top: 40px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            max-width: 300px;
+            text-align: left;
+        }
     </style>
 </head>
 <body>
-    <div style="text-align: center;">
-        <h3>⏳ Ouverture d'ALign CRM...</h3>
+    <div id="content">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Air_Liquide_logo.svg/512px-Air_Liquide_logo.svg.png" width="120" alt="Logo Air Liquide" style="margin-bottom: 20px;">
+        <h2>Bienvenue sur ALign CRM</h2>
+        
+        <a href="https://script.google.com/a/macros/airliquide.com/s/AKfycbw3Aitc9qQk2kRf9jJXmCuK6x6mEggVMfGI7XWgYN6Ax-MwaFHmyRqexcoKJU2k7DY/exec" class="btn">Ouvrir l'application</a>
+
+        <div class="instructions">
+            <p style="text-align: center; margin-top: 0;"><strong>📲 Installer l'application</strong></p>
+            <p><strong>iOS (Safari) :</strong> Touchez l'icône de partage (carré avec flèche) puis "Sur l'écran d'accueil".</p>
+            <p><strong>Android :</strong> Touchez les 3 points en haut à droite puis "Ajouter à l'écran d'accueil".</p>
+        </div>
     </div>
+
+    <script>
+        // Détection : L'application est-elle ouverte depuis l'écran d'accueil ?
+        const isStandalone = window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches;
+
+        if (isStandalone) {
+            // L'utilisateur a cliqué sur son icône personnelle ! On redirige de suite.
+            document.getElementById('content').style.display = 'none';
+            document.body.innerHTML = '<h3>⏳ Ouverture du CRM...</h3>';
+            
+            window.location.href = "https://script.google.com/a/macros/airliquide.com/s/AKfycbw3Aitc9qQk2kRf9jJXmCuK6x6mEggVMfGI7XWgYN6Ax-MwaFHmyRqexcoKJU2k7DY/exec";
+        }
+    </script>
 </body>
 </html>
