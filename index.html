@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ALign CRM Pro</title>
 
-    <link rel="apple-touch-icon" href="logo.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="logo.png">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23002d72'/%3E%3Ctext x='50%25' y='55%25' font-family='Arial, sans-serif' font-size='45' font-weight='bold' fill='%23ffffff' text-anchor='middle' dominant-baseline='middle'%3EAL%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23002d72'/%3E%3Ctext x='50%25' y='55%25' font-family='Arial, sans-serif' font-size='45' font-weight='bold' fill='%23ffffff' text-anchor='middle' dominant-baseline='middle'%3EAL%3C/text%3E%3C/svg%3E">
     
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -28,7 +28,7 @@
             padding: 20px;
         }
         .btn {
-            background-color: #3498db;
+            background-color: #002d72; /* Bleu Air Liquide */
             color: white;
             padding: 15px 30px;
             border: none;
@@ -41,7 +41,7 @@
             transition: background-color 0.3s;
         }
         .btn:hover {
-            background-color: #2980b9;
+            background-color: #001f4d;
         }
         .instructions {
             font-size: 0.9rem;
@@ -54,29 +54,33 @@
             max-width: 320px;
             text-align: left;
         }
-        h2 { margin-bottom: 10px; }
+        h2 { margin-bottom: 5px; color: #002d72; }
         p.subtitle { margin-top: 0; color: #7f8c8d; font-size: 1rem; }
-        /* Petit effet sympa pour que ton logo ressemble à une icône d'app sur la page */
+        
+        /* Style du SVG sur la page d'accueil */
         .app-icon {
-            width: 140px;
-            height: 140px;
-            object-fit: cover;
-            border-radius: 25px; 
-            margin-bottom: 10px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            width: 120px;
+            height: 120px;
+            margin-bottom: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            border-radius: 24px;
         }
     </style>
 </head>
 <body>
     <div id="content">
-        <img src="logo.png" alt="Logo CRM" class="app-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="app-icon">
+            <rect width="100" height="100" rx="20" fill="#002d72"/>
+            <text x="50%" y="55%" font-family="Arial, sans-serif" font-size="45" font-weight="bold" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">AL</text>
+        </svg>
+
         <h2>ALign CRM Pro</h2>
         <p class="subtitle">Votre environnement de gestion client</p>
         
         <a href="https://script.google.com/a/macros/airliquide.com/s/AKfycbw3Aitc9qQk2kRf9jJXmCuK6x6mEggVMfGI7XWgYN6Ax-MwaFHmyRqexcoKJU2k7DY/exec" class="btn">Ouvrir l'application</a>
 
         <div class="instructions">
-            <p style="text-align: center; margin-top: 0; color: #2c3e50;"><strong>📲 Installer l'application</strong></p>
+            <p style="text-align: center; margin-top: 0; color: #002d72;"><strong>📲 Installer l'application</strong></p>
             <p><strong>iOS (Safari) :</strong> Touchez l'icône de partage (carré avec flèche) puis "Sur l'écran d'accueil".</p>
             <p><strong>Android :</strong> Touchez les 3 points en haut à droite puis "Ajouter à l'écran d'accueil".</p>
         </div>
@@ -87,7 +91,7 @@
 
         if (isStandalone) {
             document.getElementById('content').style.display = 'none';
-            document.body.innerHTML = '<h3>⏳ Ouverture de ALign CRM Pro...</h3>';
+            document.body.innerHTML = '<h3 style="color:#002d72;">⏳ Ouverture de ALign CRM Pro...</h3>';
             
             window.location.href = "https://script.google.com/a/macros/airliquide.com/s/AKfycbw3Aitc9qQk2kRf9jJXmCuK6x6mEggVMfGI7XWgYN6Ax-MwaFHmyRqexcoKJU2k7DY/exec";
         }
